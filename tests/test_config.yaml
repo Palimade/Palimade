@@ -1,6 +1,66 @@
-name: TestAgent
-version: 1.0
-settings:
-  learning_rate: 0.001
-  max_iterations: 10
-  integration: False
+agent:
+  name: AdvancedTestAgent
+  mode: autonomous
+  logging: true
+  log_level: DEBUG
+  retry_attempts: 5
+  timeout: 30  # seconds
+  max_concurrent_tasks: 3
+  error_handling:
+    retry_on_failure: true
+    max_retries: 3
+    backoff_strategy: exponential
+
+integrations:
+  slack:
+    enabled: true
+    token: "xoxb-your-slack-token"
+    default_channel: "#general"
+    notify_on_error: true
+  database:
+    type: "postgresql"
+    host: "localhost"
+    port: 5432
+    username: "admin"
+    password: "password"
+    database_name: "palimade_test"
+    connection_pool_size: 10
+  email:
+    enabled: true
+    smtp_server: "smtp.example.com"
+    port: 587
+    username: "user@example.com"
+    password: "securepassword"
+    recipients:
+      - "admin@example.com"
+      - "dev@example.com"
+  webhook:
+    enabled: true
+    endpoint_url: "https://example.com/webhook"
+    headers:
+      Authorization: "Bearer your-api-key"
+    timeout: 15
+
+processing:
+  batch_size: 50
+  parallel_processing: true
+  data_validation: true
+  cleanup_temp_files: true
+
+security:
+  encryption:
+    enabled: true
+    algorithm: AES256
+  api_keys:
+    service_a: "api-key-a"
+    service_b: "api-key-b"
+
+monitoring:
+  enabled: true
+  log_metrics: true
+  alert_thresholds:
+    cpu_usage: 85  # percent
+    memory_usage: 75  # percent
+  notification_channels:
+    - slack
+    - email
