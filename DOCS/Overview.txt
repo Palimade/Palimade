@@ -1,0 +1,8 @@
+# Overview
+
+**Palimade** is a modular platform designed to build and integrate autonomous agents. Our agents are adaptable, scalable, and suitable for complex workflows in various industries.
+
+## Key Features
+- **Modular Design:** Flexible architecture for seamless integration.
+- **Scalable Deployment:** From small businesses to large enterprises.
+- **Autonomous Intelligence:** Agents that learn and optimize over time.
