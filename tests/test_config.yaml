@@ -1,0 +1,6 @@
+name: TestAgent
+version: 1.0
+settings:
+  learning_rate: 0.001
+  max_iterations: 10
+  integration: False
